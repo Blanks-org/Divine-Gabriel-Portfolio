@@ -814,7 +814,7 @@
         <div class="service-sub">Full productions</div>
         <div class="service-price">₦30,000</div>
         <ul>
-          <li>Music videos & commercials</li>
+          <li>Music videos </li>
           <li>Unlimited revisions</li>
           <li>Priority 5-day turnaround</li>
           <li>Motion graphics included</li>
@@ -827,7 +827,7 @@
   <!-- DG Presets -->
   <section id="presets">
     <p class="section-label reveal">Digital Products</p>
-    <h2 class="section-title reveal">DG Presets.</h2>
+<h2 class="section-title reveal" id="presetsTitleTap">DG Presets.</h2> 
     <p class="section-sub reveal">Handcrafted effects and presets for editors. Drop them in and elevate your cuts instantly.</p>
     <div id="adminPanel" style="display:none; margin-bottom:2rem;">
       <div style="background:#111; border:1px solid var(--border); border-radius:20px; padding:2rem;">
@@ -853,8 +853,8 @@
         <button class="preset-tab-btn" onclick="filterPresets('ae',this)">After Effects</button>
         <button class="preset-tab-btn" onclick="filterPresets('alight',this)">Alight Motion</button>
       </div>
-      <span id="secretTrigger" style="width:28px;height:28px;display:inline-block;cursor:default;opacity:0;user-select:none;" title=""></span>
-    <div id="presetsEmpty" style="display:none; text-align:center; padding:4rem 2rem; border:1px dashed rgba(201,168,76,0.2); border-radius:20px;">
+<span id="secretTrigger" style="width:60px;height:40px;display:inline-block;cursor:default;opacity:0;user-select:none;" title=""></span> 
+      <div id="presetsEmpty" style="display:none; text-align:center; padding:4rem 2rem; border:1px dashed rgba(201,168,76,0.2); border-radius:20px;">
       <p style="font-family:var(--display);font-size:1.4rem;color:rgba(250,250,248,0.3);font-style:italic;">No presets listed yet.</p>
       <p style="font-family:var(--body);font-size:0.85rem;color:rgba(250,250,248,0.2);margin-top:0.5rem;">Check back soon — new packs dropping.</p>
     </div>
@@ -1150,11 +1150,14 @@ document.addEventListener('keydown', e => {
 document.addEventListener('keyup', e => keysDown.delete(e.key.toLowerCase()));
 
 let tapCount = 0; let tapTimer = null;
-document.getElementById('secretTrigger').addEventListener('click', () => {
+function handleSecretTap() {
   tapCount++;
   clearTimeout(tapTimer);
   tapTimer = setTimeout(() => { tapCount = 0; }, 3000);
   if (tapCount >= 5) { tapCount = 0; promptAdmin(); }
+}
+document.getElementById('secretTrigger').addEventListener('click', handleSecretTap);
+document.getElementById('presetsTitleTap').addEventListener('click', handleSecretTap);
 });
 
     // ── DG PRESETS MANAGER ──
