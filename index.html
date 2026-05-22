@@ -824,23 +824,6 @@
       </div>
     </div>
   </section>
-const keysDown = new Set();
-document.addEventListener('keydown', e => {
-  keysDown.add(e.key.toLowerCase());
-  if (keysDown.has('shift') && keysDown.has('d') && keysDown.has('g')) {
-    promptAdmin();
-    keysDown.clear();
-  }
-});
-document.addEventListener('keyup', e => keysDown.delete(e.key.toLowerCase()));
-
-let tapCount = 0; let tapTimer = null;
-document.getElementById('secretTrigger').addEventListener('click', () => {
-  tapCount++;
-  clearTimeout(tapTimer);
-  tapTimer = setTimeout(() => { tapCount = 0; }, 3000);
-  if (tapCount >= 5) { tapCount = 0; promptAdmin(); }
-});
   <!-- DG Presets -->
   <section id="presets">
     <p class="section-label reveal">Digital Products</p>
@@ -1156,6 +1139,23 @@ document.getElementById('secretTrigger').addEventListener('click', () => {
       checkVisibility(); // run once on load
     }
     initReveal();
+    const keysDown = new Set();
+document.addEventListener('keydown', e => {
+  keysDown.add(e.key.toLowerCase());
+  if (keysDown.has('shift') && keysDown.has('d') && keysDown.has('g')) {
+    promptAdmin();
+    keysDown.clear();
+  }
+});
+document.addEventListener('keyup', e => keysDown.delete(e.key.toLowerCase()));
+
+let tapCount = 0; let tapTimer = null;
+document.getElementById('secretTrigger').addEventListener('click', () => {
+  tapCount++;
+  clearTimeout(tapTimer);
+  tapTimer = setTimeout(() => { tapCount = 0; }, 3000);
+  if (tapCount >= 5) { tapCount = 0; promptAdmin(); }
+});
 
     // ── DG PRESETS MANAGER ──
     const ADMIN_PIN = '200506'; // Change this to your own PIN
