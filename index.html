@@ -126,7 +126,7 @@
     }
     .mobile-menu.open { display: flex; }
     .mobile-menu a {
-      font-family: var(--display); font-size: 2.2rem; font-weight: 600;
+      font-family: var(--display); font-size: 1.5rem; font-weight: 600;
       color: rgba(250,250,248,0.8); text-decoration: none;
       letter-spacing: 0.04em; transition: color 0.2s;
     }
@@ -685,7 +685,7 @@
   <section id="hero">
     <div class="hero-glow"></div>
     <div class="hero-content" style="animation: fadeUp 1s ease both;">
-      <p class="hero-eyebrow">Available for projects · Nigeria</p>
+      <p class="hero-eyebrow">Available for projects</p>
       <h1 class="hero-name">Divine<br /><span>Gabriel.</span></h1>
       <p class="hero-title">Video Editor & Motion Designer</p>
       <p class="hero-tagline">"Crafting visuals that speak before words do."</p>
@@ -725,7 +725,7 @@
         <div class="play-btn">
           <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         </div>
-        <span>Your showreel goes here — embed Vimeo or YouTube</span>
+        <span>Your showreel goes here — embed Video or YouTube</span>
       </div>
     </div>
   </section>
@@ -1158,8 +1158,6 @@ function handleSecretTap() {
 }
 document.getElementById('secretTrigger').addEventListener('click', handleSecretTap);
 document.getElementById('presetsTitleTap').addEventListener('click', handleSecretTap);
-});
-
     // ── DG PRESETS MANAGER ──
     const ADMIN_PIN = '200506'; // Change this to your own PIN
     let presets = JSON.parse(localStorage.getItem('dgPresets') || '[]');
